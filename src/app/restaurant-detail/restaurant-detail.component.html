@@ -1,6 +1,13 @@
-<article>
+<!-- <article>
   <header>{{(restaurant$|async).name}}</header>
   <section>{{(restaurant$|async).cuisine}}</section>
   <section>{{(restaurant$|async).description}}</section> 
+  <footer><a [routerLink] = "'/restaurants'">Home</a></footer>
+</article> -->
+
+<article *ngIf="restaurant$|async; let r">
+  <header>{{r?.name}}</header>
+  <section>{{r?.cuisine}}</section>
+  <section>{{r?.description}}</section> 
   <footer><a [routerLink] = "'/restaurants'">Home</a></footer>
 </article>

@@ -1,0 +1,7 @@
+<ul>
+  <li *ngFor="let restaurant of restaurants$ | async; index as i">
+    <a [routerLink] = "['/restaurants/', i]">{{restaurant.name}}</a>
+  </li>
+</ul>
+
+

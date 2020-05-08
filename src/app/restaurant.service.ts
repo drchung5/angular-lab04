@@ -11,11 +11,11 @@ export class RestaurantService  {
   baseURL = 'http://localhost:8000/restaurants/'
 
   public getAllRestaurants():Observable<Restaurant[]> { 
-    return <Observable<Restaurant[]>>this.http.get(this.baseURL)
+    return this.http.get<Restaurant[]>(this.baseURL)
   }
 
   public getRestaurantByIndex(index: number): Observable<Restaurant> {
-    return <Observable<Restaurant>>this.http.get(this.baseURL+index)
+    return this.http.get<Restaurant>(this.baseURL+index)
   }
 
   constructor(private http: HttpClient) {}
